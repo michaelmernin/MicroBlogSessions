@@ -1,0 +1,24 @@
+<html>
+<body>
+<form action="/messages" method="post">
+    <input type="text" placeholder="Write a message" name="messages"/>
+    <button type="submit">Submit</button>
+</form>
+<form action="/messages" method="post">
+    <input type="text" placeholder="Message #" name="messages"/>
+    <button type="submit">Delete</button>
+</form>
+<form action="/messages" method="post">
+    <input type="text" placeholder="Message #" name="messages"/>
+    <input type="text" placeholder="Edit message" name="messages"/>
+    <button type="submit">Edit</button>
+
+</form>
+<b>Messages by {{name}}:
+    <ol>
+        {{#newMessage}}
+        <li> {{messages}}</li>
+        {{/newMessage}}</ol></b>
+
+</body>
+</html>
