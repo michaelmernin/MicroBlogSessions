@@ -16,7 +16,7 @@ public class Main {
 
     public static HashMap<String, User> users = new HashMap<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Spark.init();
 
         Spark.get(
@@ -117,7 +117,7 @@ public class Main {
                     String name = session.attribute("loginName");
                     User user = users.get(name);
                     if (user == null) {
-                        throws new Exception:"no user found"
+                        throw new Exception:"no user found"
                     }
                     String message = request.queryParams("message");
                     Messages messages = new Messages(message);
@@ -132,7 +132,7 @@ public class Main {
                 "/deleteMessage",
                 ((request, response) ->
 
-    {
+
 
         Session session = request.session();
         String mess = session.attribute("loginName");
@@ -151,6 +151,8 @@ public class Main {
         response.redirect("/");
         return "";
     }
+
+}
 
 
 
